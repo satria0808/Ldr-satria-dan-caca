@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LDR Bareng Caca</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(#ffe0ec, #ffb6c1);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    h1 {
+      color: #d6336c;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #333;
+      font-size: 1.2em;
+      text-align: center;
+      max-width: 80%;
+    }
+    .photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid #fff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      margin: 20px 0;
+    }
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .love {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Love_Heart_SVG.svg/768px-Love_Heart_SVG.svg.png') no-repeat center;
+      background-size: contain;
+      pointer-events: none;
+      animation: floatUp 1.2s ease-out forwards;
+    }
+    @keyframes floatUp {
+      0% {transform: translateY(0) scale(1); opacity: 1;}
+      100% {transform: translateY(-100px) scale(1.5); opacity: 0;}
+    }
+    audio {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body onclick="showHeart(event)">
+  <h1>Hai Caca, Sayangku</h1>
+  <div class="photo">
+    <img src="foto-caca.jpg" alt="Caca Cantikku">
+  </div>
+  <p>
+    Meski kita LDR, rasa sayangku ke kamu gak akan pernah berkurang. Kamu selalu di hatiku, Caca.<br>
+    Setiap hari, aku mikirin kamu. Aku janji akan terus perjuangin kamu, sampai kita bisa bareng selamanya.
+  </p>
+  <audio controls autoplay loop>
+    <source src="lagu-kita.mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung audio.
+  </audio>  <script>
+    function showHeart(e) {
+      const heart = document.createElement('div');
+      heart.className = 'love';
+      heart.style.left = `${e.clientX - 15}px`;
+      heart.style.top = `${e.clientY - 15}px`;
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 1200);
+    }
+  </script></body>
+</html>
